@@ -1,6 +1,6 @@
-{
-  "name": "koishi-plugin-dispose-group",
-  "description": "机器人管理员私聊退群并发送自定义文本的插件。[点我查看使用方法](https://github.com/DoomVoss/Koishi-Plugins-CBS/tree/main/plugins/dispose-group)",
+ {
+  "name": "koishi-plugin-strict-auth",
+  "description": "严格鉴权插件，仅允许群主/管理员与 authority>=3 的用户执行列入名单的敏感命令。[点我查看使用方法](https://github.com/DoomVoss/Koishi-Plugins-CBS/tree/main/plugins/strict-auth)",
   "version": "1.0.0",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -9,15 +9,15 @@
   ],
   "license": "MIT",
   "keywords": [
-    "chatbot",
+    "qq",
     "koishi",
     "plugin",
-    "dispose",
-    "group",
-    "quit",
+    "auth",
+    "command",
+    "onebot",
     "koishi-plugin"
   ],
-  "homepage": "https://github.com/DoomVoss/Koishi-Plugins-CBS/tree/main/plugins/dispose-group",
+  "homepage": "https://github.com/DoomVoss/Koishi-Plugins-CBS/tree/main/plugins/strict-auth",
   "repository": {
     "type": "git",
     "url": "https://github.com/DoomVoss/Koishi-Plugins-CBS.git"
