@@ -1,4 +1,4 @@
-name: Publish Package and Heartbeat
+name: Publish NPM Package
 
 on:
   push:
@@ -10,6 +10,8 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # 允许推送仓库内容
 
     steps:
       - name: Checkout code
@@ -71,21 +73,3 @@ jobs:
           git add -f ./publish/npmpublish ./publish/npmpublish_temp || echo "Nothing to add"
           git commit -m "✔️ [skip ci]" || echo "No changes to commit"
           git push || echo "Push failed or no changes"
-
-  heartbeat:
-    runs-on: ubuntu-latest
-    if: github.event_name == 'schedule'
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Heartbeat commit
-        run: |
-          git config --local user.email "satmtr.top@gmail.com"
-          git config --local user.name "Doom"
-          git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
-          git stash
-          git reset --hard
-          git pull --rebase
-          git commit --allow-empty -m "🟢"
-          git push

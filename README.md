@@ -44,7 +44,7 @@ Koishi-Plugins-CBS 是 Doom 在 **CatBotStudio** 开发的一系列 Koishi 插�
 ## 温馨提示
 
 - 由于插件列表会持续更新，此处不列出所有插件说明文档，插件将陆续上传至该仓库及 npm。
-- 例如，`dispose-group` 插件的说明文档位于： [plugins/dispose-group/readme.md](plugins/dispose-group/README.md)
+- 例如，`dispose-group` 插件的说明文档位于： [plugins/dispose-group/readme.md](plugins/dispose-group/readme.md)
 - 如果发现仓库代码与 npm 版本不一致，请以 npm 平台发布的版本为准。
 - 发现 Bug 或有任何问题？ 欢迎[提交 Issue](https://github.com/DoomVoss/Koishi-Plugins-CBS/issues/new/choose)！
 - 如果你发现本项目的 commit 长时间未更新，这意味着作者暂停了本项目的更新，并且不再维护。请自行判断项目的使用情况。
@@ -114,7 +114,7 @@ publish/
     └── LICENSE.txt # 请勿改动
 ```
 
-**注意：**在发布前请确保 `package.json` 的 `name` 字段不与已有 npm 包冲突，否则会触发 403 错误。
+**注意**：在发布前请确保 `package.json` 的 `name` 字段不与已有 npm 包冲突，否则会触发 403 错误。
 
 在 `npmpublish` 目录下，确保包含 `package.json` 和其他相关文件，以便顺利发布 npm 包。
 
