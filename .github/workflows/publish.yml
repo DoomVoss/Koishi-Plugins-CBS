@@ -62,8 +62,9 @@ jobs:
       - name: Clean up
         if: env.package_json_exists == 'true'
         run: |
+          mkdir -p ./publish/npmpublish
           rm -rf ./publish/npmpublish/*
-          cp ./publish/npmpublish_temp/LICENSE.txt ./publish/npmpublish/ || echo "LICENSE.txt not found"
+          cp -r ./publish/npmpublish_temp/. ./publish/npmpublish/ || echo "Nothing to copy"
 
       - name: Commit and push cleanup
         if: env.package_json_exists == 'true'
