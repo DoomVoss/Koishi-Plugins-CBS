@@ -1,0 +1,90 @@
+name: Publish Package and Heartbeat
+
+on:
+  push:
+    branches:
+      - main
+  # schedule:
+  #   - cron: '0 * * * *'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+
+      - name: Create directories
+        run: |
+          mkdir -p ./publish/npmpublish
+          mkdir -p ./publish/npmpublish_temp
+
+      - name: Check package.json
+        id: check_package_json
+        run: |
+          if [ ! -f ./publish/npmpublish/package.json ]; then
+            echo "package_json_exists=false" >> $GITHUB_ENV
+            echo "No package.json found, workflow exiting."
+            exit 0
+          else
+            echo "package_json_exists=true" >> $GITHUB_ENV
+          fi
+
+      - name: Login to NPM
+        if: env.package_json_exists == 'true'
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+
+      - name: Verify NPM Token
+        if: env.package_json_exists == 'true'
+        run: npm whoami
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish package
+        if: env.package_json_exists == 'true'
+        working-directory: ./publish/npmpublish
+        run: |
+          if npm publish --access public; then
+            echo "Package published successfully ✅"
+          else
+            echo "Package publish failed ❌"
+            exit 1
+
+      - name: Clean up
+        if: env.package_json_exists == 'true'
+        run: |
+          rm -rf ./publish/npmpublish/*
+          cp ./publish/npmpublish_temp/LICENSE.txt ./publish/npmpublish/ || echo "LICENSE.txt not found"
+
+      - name: Commit and push cleanup
+        if: env.package_json_exists == 'true'
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          git add -f ./publish/npmpublish ./publish/npmpublish_temp || echo "Nothing to add"
+          git commit -m "✔️ [skip ci]" || echo "No changes to commit"
+          git push || echo "Push failed or no changes"
+
+  heartbeat:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Heartbeat commit
+        run: |
+          git config --local user.email "satmtr.top@gmail.com"
+          git config --local user.name "Doom"
+          git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+          git stash
+          git reset --hard
+          git pull --rebase
+          git commit --allow-empty -m "🟢"
+          git push
