@@ -34,7 +34,7 @@
 <details>
 <summary>点击此处 可查看更新日志</summary>
 
--   **1.0.0**
+-   **1.1.0**
     -   首次上传插件
 
 </details>  

@@ -1,7 +1,7 @@
 {
   "name": "koishi-plugin-dispose-group",
   "description": "机器人管理员私聊退群并发送自定义文本的插件。[点我查看使用方法](https://github.com/DoomVoss/Koishi-Plugins-CBS/tree/main/plugins/dispose-group)",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "files": [
