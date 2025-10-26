@@ -129,9 +129,9 @@ publish/
 
 <div align="center">
 
-<img src="assets/Sponsor.png" alt="赞助二维码" width="300" style="margin-bottom: 10px;">
-<p>扫码赞助，支持猫猫_Bot持续开发运营</p>
-
+<img src="assets/Sponsor.png" alt="赞助二维码" style="width: 100%; max-width: 1000px; height: auto; margin-bottom: 10px;">
+<p>扫码赞助，支持猫猫_Bot及 Koishi 插件的持续开发</p>
+  
 </div>
 
 ---
@@ -142,7 +142,7 @@ publish/
 
 <div align="center">
 
-<img src="assets/Groups.png" alt="宣发二维码" width="300" style="margin-bottom: 10px;">
+<img src="assets/Groups.png" alt="宣发二维码" style="width: 100%; max-width: 1000px; height: auto; margin-bottom: 10px;">
 <p>扫码二维码加入 官群 / 频道 </p>
 
 </div>
