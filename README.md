@@ -6,6 +6,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/DoomVoss/Koishi-Plugins-CBS)](https://github.com/DoomVoss/Koishi-Plugins-CBS/issues)
 [![NPM](https://img.shields.io/badge/NPM-Doom-blue)](https://www.npmjs.com/~doomvoss)
 [![QQ](https://img.shields.io/badge/QQ-Doom-blue)](https://qm.qq.com/q/oGwB5mKQtq)
+![visitor](https://visitor-badge.laobi.icu/badge?page_id=DoomVoss.Koishi-Plugins-CBS)
 
 </div>
 
@@ -122,6 +123,56 @@ publish/
 
 ---
 
+## 支持与赞助
+
+如果你觉得本项目对你有帮助，可以通过以下方式支持我们：
+
+<div align="center">
+
+<img src="assets/Sponsor.png" alt="赞助二维码" width="300" style="margin-bottom: 10px;">
+<p>扫码赞助，支持猫猫_Bot持续开发运营</p>
+
+</div>
+
+---
+
+## 联系
+
+通过以下方式联系我们：
+
+<div align="center">
+
+<img src="assets/Groups.png" alt="宣发二维码" width="300" style="margin-bottom: 10px;">
+<p>扫码二维码加入 官群 / 频道 </p>
+
+</div>
+
+---
+
 ## 许可协议
 
 - 本项目采用 MIT 许可证，详情请参见 [LICENSE](./LICENSE) 文件
+
+> **MIT License**
+>
+> Copyright (c) 2025 Doom
+>
+> Permission is hereby granted, free of charge, to any person obtaining a copy
+> of this software and associated documentation files (the "Software"), to deal
+> in the Software without restriction, including without limitation the rights
+> to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+> copies of the Software, and to permit persons to whom the Software is
+> furnished to do so, subject to the following conditions:
+>
+> The above copyright notice and this permission notice shall be included in all
+> copies or substantial portions of the Software.
+>
+> **免责声明**：
+>
+> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+> IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+> FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+> AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+> LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+> OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+> SOFTWARE.
