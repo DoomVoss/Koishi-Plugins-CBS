@@ -1,0 +1,41 @@
+{
+  "name": "koishi-plugin-group-curfew-test",
+  "description": "群管理宵禁功能，每日定时开启与解除全员禁言。[点我查看使用方法](https://github.com/DoomVoss/Koishi-Plugins-CBS/tree/main/plugins/group-curfew)",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "qq",
+    "koishi",
+    "plugin",
+    "admin",
+    "group",
+    "onebot",
+    "koishi-plugin",
+    "禁言",
+    "宵禁"
+  ],
+  "homepage": "https://github.com/DoomVoss/Koishi-Plugins-CBS/tree/main/plugins/group-curfew",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DoomVoss/Koishi-Plugins-CBS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DoomVoss/Koishi-Plugins-CBS/issues"
+  },
+  "author": {
+    "name": "Doom",
+    "email": "satmtr.top@gmail.com",
+    "url": "https://github.com/DoomVoss"
+  },
+  "peerDependencies": {
+    "koishi": "^4.18.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
