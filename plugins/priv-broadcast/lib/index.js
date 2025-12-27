@@ -78,11 +78,11 @@ function apply(ctx) {
     .option("text", "-t [text:text]", { fallback: "" })
     .option("pic", "-p [url:string]", { fallback: "" })
     .option("only", "-o", { fallback: false })
-    .option("combine", "-h", { fallback: false })
+    .option("combine", "-c", { fallback: false })
     .usage([
       "用法：/broadcast -l [群号] -t [文本] -p [图片URL]",
       " - 默认发送图文结合消息",
-      " - 带 -h 参数则发送QQ合并转发消息",
+      " - 带 -c 参数则发送QQ合并转发消息",
       " - 全局广播：使用 -o，排除群号用 -k"
     ].join("\n"))
     .example("/broadcast -l 123456,654321 -t 柚子厨蒸鹅心")

@@ -19,7 +19,7 @@
 ---
 
 ## 插件配置项说明
-> 以下配置项说明将同时体现在 `.ts` 源码注释中。
+> 以下配置项说明将同时体现在源码注释中。
 
 | 配置项 | 类型 | 默认值 | 说明 |
 |:------|:------|:------|:------|
@@ -32,7 +32,7 @@
 
 
   ```
-  /broadcast -l [群号] -p [图片URL] -h -t [文本]
+  /broadcast -l [群号] -p [图片URL] -c -t [文本]
   ```
 
 | 参数 | 说明 |
@@ -41,7 +41,7 @@
 | `-l` | 指定群号（不使用时请配合 `-o` 全局广播） |
 | `-k` | 跳过广播指定群（不使用时请配合 `-o` 全局广播） |
 | `-p` | 图片 URL（可与文本同发） |
-| `-h` | 指定广播合并聊天记录消息（仅Onebot） |
+| `-c` | 指定广播合并聊天记录消息（仅Onebot） |
 
 
 **示例**：
@@ -50,7 +50,7 @@
   /broadcast -l 123456,654321 -t 你好世界
   /broadcast -k 123456 -p https://example.com/YuzuSoft.jpg
   /broadcast -o -p https://example.com/SenrenBanka.png -t 公告
-  /broadcast -o -h -p https://example.com/BlueArchive.png -t 公告
+  /broadcast -o -c -p https://example.com/BlueArchive.png -t 公告
   ```
 
 ---
@@ -79,4 +79,7 @@
     -   修复：若干潜在 Bug，优化代码整体逻辑与稳定性
     -   TODO：在插件配置项中添加更多自定义配置（欢迎提Issue）
 
-</details>  
+-   **1.1.1**
+    -   修复：将`-h`指令参数修改为`-c`指令参数，功能不变
+
+</details>

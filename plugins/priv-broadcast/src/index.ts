@@ -4,7 +4,7 @@ export const name = 'priv-broadcast'
 export const using = ['database']
 
 export interface Config {}
-export const Config = Schema.object<Config>({})
+export const Config = Schema.object({})
 
 function buildMessageSegments(text?: string, picUrl?: string) {
   const segs: any[] = []
@@ -18,7 +18,12 @@ async function sendForwardMessage(bot: Bot, channelId: string, segments: any[]) 
     channelId,
     jsx('message', {
       forward: true,
-      children: segments.map(seg => jsx('message', { userId: bot.selfId, children: typeof seg === 'string' ? h.parse(seg) : seg }))
+      children: segments.map(seg =>
+        jsx('message', {
+          userId: bot.selfId,
+          children: typeof seg === 'string' ? h.parse(seg) : seg
+        })
+      )
     })
   )
 }
@@ -35,10 +40,12 @@ async function sendBroadcast(
   for (let i = 0; i < channelIds.length; i += batchSize) {
     const batch = channelIds.slice(i, i + batchSize)
     const results = await Promise.allSettled(
-      batch.map(cid => combine ? sendForwardMessage(bot, cid, segments) : bot.sendMessage(cid, segments))
+      batch.map(cid =>
+        combine ? sendForwardMessage(bot, cid, segments) : bot.sendMessage(cid, segments)
+      )
     )
 
-    results.forEach(r => r.status === 'fulfilled' ? ok++ : fail++)
+    results.forEach(r => (r.status === 'fulfilled' ? ok++ : fail++))
     await new Promise(r => setTimeout(r, 1000 + Math.random() * 1000))
   }
 
@@ -59,11 +66,11 @@ export function apply(ctx: Context) {
         '用法：/broadcast -l [群号] -t [文本] -p [图片URL]',
         ' - 文本与图片可二选一或同时发送（默认单条发送，不生成合并转发消息）',
         ' - 带 -h 参数则生成QQ合并转发消息',
-        ' - 全局广播：使用 -o，排除群号用 -k',
+        ' - 全局广播：使用 -o，排除群号用 -k'
       ].join('\n')
     )
     .example('/broadcast -l 123456,654321 -t 柚子厨蒸鹅心')
-    .action(async ({ session, options }) => {
+    .action(async ({ session, options }: any) => {
       const { list, skip, text, pic, only, combine } = options
 
       if (list && only) return session.send('参数冲突：-l 与 -o 不能同时使用。')
@@ -80,7 +87,9 @@ export function apply(ctx: Context) {
       // 全局广播
       if (only) {
         const fields = ['id']
-        const channels = await ctx.database.getAssignedChannels(fields, { [session.platform]: [session.selfId] })
+        const channels = await ctx.database.getAssignedChannels(fields, {
+          [session.platform]: [session.selfId]
+        })
         targetGroups = channels.map(ch => ch.id.toString())
 
         // 排除 -k 指定群
@@ -95,9 +104,9 @@ export function apply(ctx: Context) {
       try {
         const { ok, fail } = await sendBroadcast(session.bot, targetGroups, segments, combine)
         return session.send(`广播完成：成功 ${ok}，失败 ${fail}`)
-      } catch (err) {
+      } catch (err: any) {
         ctx.logger('priv-broadcast').warn(err)
-        return session.send(`广播出现异常：${(err as any)?.message || err}`)
+        return session.send(`广播出现异常：${err?.message || err}`)
       }
     })
 }
