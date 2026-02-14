@@ -3,9 +3,9 @@
 用途: 伪造消息插件说明文档
 版本: 1.0.0
 -->
-# koishi-plugin-fakemsg
+# koishi-plugin-fakemsg-admin
 
-[![npm](https://img.shields.io/npm/v/koishi-plugin-fakemsg?style=flat-square)](https://www.npmjs.com/package/koishi-plugin-fakemsg)
+[![npm](https://img.shields.io/npm/v/koishi-plugin-fakemsg?style=flat-square)](https://www.npmjs.com/package/koishi-plugin-fakemsg-admin)
 
 ## 插件介绍
 本插件用于 **Koishi 机器人框架**，提供伪造消息申请与管理员审核机制。  

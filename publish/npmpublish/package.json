@@ -1,7 +1,7 @@
 {
-  "name": "koishi-plugin-fakemsg",
+  "name": "koishi-plugin-fakemsg-admin",
   "version": "1.0.0",
-  "description": "带管理审核功能的伪造QQ合并聊天记录插件[点我查看使用方法](https://github.com/DoomVoss/Koishi-Plugins-CBS/tree/main/plugins/fakemsg)",
+  "description": "带管理审核功能的伪造QQ合并聊天记录插件[点我查看使用方法](https://github.com/DoomVoss/Koishi-Plugins-CBS/tree/main/plugins/fakemsg-admin)",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "files": [
@@ -16,7 +16,7 @@
     "qq",
     "message"
   ],
-  "homepage": "https://github.com/DoomVoss/Koishi-Plugins-CBS/tree/main/plugins/fakemsg",
+  "homepage": "https://github.com/DoomVoss/Koishi-Plugins-CBS/tree/main/plugins/fakemsg-admin",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DoomVoss/Koishi-Plugins-CBS.git"

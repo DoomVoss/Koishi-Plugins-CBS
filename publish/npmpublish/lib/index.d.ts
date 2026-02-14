@@ -1,6 +1,6 @@
 import { Context, Schema } from 'koishi';
 
-export const name = "fakemsg";
+export const name = "fakemsg-admin";
 
 export interface Config {
   userSplit: string;

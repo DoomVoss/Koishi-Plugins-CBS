@@ -2,7 +2,7 @@
 
 const { Schema, segment, h } = require("koishi");
 
-exports.name = "fakemsg";
+exports.name = "fakemsg-admin";
 
 exports.usage = `
 ---
